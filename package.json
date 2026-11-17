@@ -1,0 +1,40 @@
+{
+  "name": "blog-rest-api",
+  "version": "1.0.0",
+  "description": "Blog REST API with CRUD operations built with Node.js and Express.js (JWT auth, MongoDB, pagination, search/filter, Swagger docs).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test --test-reporter=spec",
+    "seed": "node scripts/seed.js",
+    "postman:build": "node scripts/build-postman.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "express",
+    "rest-api",
+    "crud",
+    "blog",
+    "jwt",
+    "mongodb",
+    "swagger"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.4",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.12.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.2"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Runtime JSON storage (users.json contains password hashes - never commit)
+data/*.json
+data/*.tmp
+
+npm-debug.log*
+.DS_Store
+coverage/

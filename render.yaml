@@ -1,0 +1,23 @@
+# Render Blueprint - deploys the API as a web service backed by MongoDB Atlas.
+# (Render's free disk is ephemeral, so the JSON-file driver would lose data on every deploy.)
+services:
+  - type: web
+    name: blog-rest-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: STORAGE_DRIVER
+        value: mongo
+      - key: MONGODB_URI
+        sync: false            # paste your MongoDB Atlas connection string in the Render dashboard
+      - key: JWT_SECRET
+        generateValue: true    # Render generates a strong random secret
+      - key: AUTH_REQUIRED
+        value: "false"
+      - key: CORS_ORIGIN
+        value: "*"
